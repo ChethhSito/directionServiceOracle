@@ -1,0 +1,149 @@
+body{
+    background-color: #bee9e8 ;
+    font-family: sans-serif;
+    margin: auto;
+    overflow: hidden;
+    width: 100%;
+}
+.nav-header {
+    background-color: #1b4965;
+    display: flex;
+    height: 70px;
+    padding: 0;
+    justify-content: end; 
+    align-items: center;
+    width: 100%;
+}
+
+
+nav ul {
+    list-style: none;
+}
+
+
+.main-tablas{
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    width: 100%;
+}
+.ultablas li a{
+    display: block;
+    text-decoration: none;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: black;
+    transition: background 0.2s, color 0.2s;
+    transition: border 0.2s, color 0.2s;
+
+}
+.ultablas li a:hover {
+    background-color: #171f25;
+    color: #faedd9;
+    border: 2px solid #171f25;
+}
+.ultablas li {
+    display: inline-block;
+    margin-right: 20px;
+}
+.navcrud {
+    width: 200px;
+    background-color: #62b6cb;
+    min-height: 100vh;
+    padding-top: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.ulcrud {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ulcrud li {
+    margin: 15px 0;
+    text-align: center;
+    justify-items: center;
+    color: white;
+    
+}
+
+.ulcrud li a {
+    border: 2px solid black;
+    text-decoration: none;
+    width: 60%;
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    color: black;
+    background-color:#cae9ff;
+    transition: background 0.2s, color 0.2s;
+}
+.ulcrud li a:hover{
+    background-color: #1b4965;
+    color: white;
+}
+section{
+    flex: 1;
+    padding: 40px;
+    min-height: 100vh;
+}
+.form-cont{
+    max-height: 70vh;
+    width: 80%;
+    margin: 0 auto;   
+}
+.form-group {
+    padding: 20px 0;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    font-size: 16px;
+}
+input{
+    width: 50%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #354f52;
+    background-color: #f0f0f0;
+    color: #000000;
+}
+select{
+    width: 10%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #354f52;
+    background-color: #f0f0f0;
+    color: #000000;
+}
+.add{
+    width: 20%;
+    padding: 15px;
+    border-radius: 20px;
+}
+.fechas{
+    width: 10%;
+}
+.filtro{
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;   
+}
+.btns{
+    width: 80%;
+    margin: 0 auto;  
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    
+}

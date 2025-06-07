@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="Juan" content="Java" />
+    <title>Direcciones</title>
+    <script src="/js/direcciones.js"></script>
+    <link rel="stylesheet" href="/css/tablaDirecciones.css">
+</head>
+<body>
+     <!-- header para las dos tablas  -->
+    <header>
+        <nav class="nav-header">
+            <ul class="ultablas">
+                <li><a href="http://localhost:8081/clientes">Clientes</a></li>
+                <li><a href="/direcciones">Direcciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- tablas   -->
+    <main class="main-tablas">
+        <!-- nav para Crear - Read - Update - Delete  -->
+         <nav class="navcrud">
+        <ul class="ulcrud">
+            <li><a href="/agregarDireccion">Agregar</a></li>
+            <li><a href="/editarDireccion">Editar</a></li>
+            <li><a href="">Eliminar</a></li>
+            
+        </ul>
+        </nav>
+        <section>
+            <h1>Direcciones</h1>
+            <div class="tabla-contenedor">
+                <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Direccion</th>
+                        <th>Ciudad</th>
+                        <th>Departamento</th>
+                        <th>Codigo Postal</th>
+                        <th>Tipo</th>
+                        <th>Cliente-id</th>
+                    </tr>
+                </thead>
+                <tbody id="direccion_table"></tbody>
+            </table>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
