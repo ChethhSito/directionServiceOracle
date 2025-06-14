@@ -1,74 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="Juan" content="Java" />
-    <title>Agregar Cliente</title>
-    
+    <meta charset="UTF-8" />
+    <meta name="author" content="Raúl">
+    <title>Agregar Direcciones</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="/css/addDir.css">
+
+    <!-- Iconos Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+    <!-- HEADER -->
     <header>
         <nav class="nav-header">
+            <h1 class="titulo">Proyecto Oracle MicroServicios</h1>
             <ul class="ultablas">
-                <li><a href="http://localhost:8081/clientes">Clientes</a></li>
-                <li><a href="/direcciones">Direcciones</a></li>
+                <li><a href="http://localhost:8081/clientes"><i class="fas fa-users"></i> Clientes</a></li>
+                <li><a href="/direcciones"><i class="fas fa-map-marker-alt"></i> Direcciones</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="main-tablas">
-        <nav class="navcrud">
-            <ul class="ulcrud">
-                <li><a href="/agregarDireccion">Agregar</a></li>
-                <li><a href="/editarDireccion">Editar</a></li>
-                <li><a href="">Eliminar</a></li>
-            </ul>
-        </nav>
+        <!-- BOTÓN Y MENÚ CRUD DESPLEGABLE -->
+        <div class="crud-toggle-container">
+            <button id="toggleMenu" class="toggle-button">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <nav class="navcrud visible" id="crudMenu">
+                <h1 class="titulo-crud">MENU</h1>
+                <ul class="ulcrud">
+                    <li><a href="/agregarDireccion"><i class="fas fa-plus-circle"></i> Agregar</a></li>
+                    <li><a href="/editarDireccion"><i class="fas fa-edit"></i> Editar</a></li>
+                    <li><a href="/eliminarDireccion"><i class="fas fa-trash-alt"></i> Eliminar</a></li>
+                </ul>
+            </nav>
+        </div>
 
+        <!-- FORMULARIO -->
         <section>
-            <h1>Agregar Direccion</h1>
+            <h1>Agregar Dirección</h1>
             <div class="form-cont">
-            <form id="direccionForm" method="post" >
+                <form id="direccionForm" method="post">
+                    <div class="form-group">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" id="direccion" name="direccion" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="direccion">Direccion:</label>
-                <input type="text" id="direccion" name="direccion" required>
-                 </div>
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad:</label>
+                        <input type="text" id="ciudad" name="ciudad" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="ciudad">Ciudad:</label>
-                    <input type="text" id="ciudad" name="ciudad" required>
-                </div>
+                    <div class="form-group">
+                        <label for="departamento">Departamento:</label>
+                        <input type="text" id="departamento" name="departamento" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="departamento">Departamento:</label>
-                    <input type="text" id="departamento" name="departamento" required>
-                </div>
+                    <div class="form-group">
+                        <label for="codigoPostal">Código Postal:</label>
+                        <input type="text" id="codigoPostal" name="codigoPostal" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="codigoPostal">Codigo Postal:</label>
-                    <input type="text" id="codigoPostal" name="codigoPostal" required>
-                </div>
+                    <div class="form-group">
+                        <label for="clienteId">Cliente Id:</label>
+                        <input type="text" id="clienteId" name="clienteId" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="clienteId">Cliente Id:</label>
-                    <input class="fechas" type="text" id="clienteId" name="clienteId" required>
-                </div>
+                    <div class="form-group">
+                        <label for="tipo">Tipo:</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="trabajo">Trabajo</option>
+                            <option value="domicilio">Domicilio</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
 
-                <div class="form-group">
-                    <label for="tipo">Tipo:</label>
-                    <select id="tipo" name="tipo" required>
-                    <option value="trabajo">Trabajo</option>
-                    <option value="domicilio">Domicilio</option>
-                    <option value="otro">Otro</option>
-                    </select>
-                </div>
-
-                <button class="add"  type="submit">Agregar Cliente</button>
-            </form>
+                    <button class="add" type="submit">Agregar Dirección</button>
+                </form>
             </div>
         </section>
     </main>
+
     <script src="/js/postDirecciones.js"></script>
-    <footer></footer>
+    <script>
+        const toggleBtn = document.getElementById("toggleMenu");
+        const crudMenu = document.getElementById("crudMenu");
+        const icon = toggleBtn.querySelector("i");
+
+        toggleBtn.addEventListener("click", () => {
+            crudMenu.classList.toggle("visible");
+            icon.classList.toggle("fa-chevron-left");
+            icon.classList.toggle("fa-chevron-right");
+        });
+    </script>
+</body>
+</html>

@@ -24,6 +24,10 @@ public class paginaWC {
     public String EditDireccion() {
         return "formularios/editarDireccion";
     }
+      @GetMapping("/eliminarDireccion")
+    public String DeleteDireccion() {
+        return "formularios/eliminarDireccion";
+    }
     
     
     

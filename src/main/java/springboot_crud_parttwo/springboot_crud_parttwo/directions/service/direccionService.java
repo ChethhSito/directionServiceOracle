@@ -75,18 +75,19 @@ public class direccionService {
         }
     }
     @Transactional(readOnly = true)
-    public directions deleteDirection(Long id){
-       try {
+     public directions deleteDirection(Long id){
+        try {
             directions direccion = directionRepository.obtenerDireccionPorId(id);
             if (direccion != null) {
                 directionRepository.eliminarDireccion(id);
                 return direccion;
             } 
-        }catch (Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException("Error deleting direction with id: " + id, e);
         }
         return null;
     }
+
     @Transactional(readOnly = true)
     public List<directions> getDirectionByClientId(Long id) {
         return directionRepository.obtenerDireccionPorClienteId(id);

@@ -1,57 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="Juan" content="Java" />
-    <title>Direcciones</title>
-    <script src="/js/direcciones.js"></script>
-    <link rel="stylesheet" href="/css/tablaDirecciones.css">
+  <meta charset="UTF-8" />
+  <title>Direcciones</title>
+  <meta name="Juan" content="Java" />
+  <link rel="stylesheet" href="/css/tablaDirecciones.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-     <!-- header para las dos tablas  -->
-    <header>
-        <nav class="nav-header">
-            <ul class="ultablas">
-                <li><a href="http://localhost:8081/clientes">Clientes</a></li>
-                <li><a href="/direcciones">Direcciones</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- HEADER -->
+  <header>
+    <nav class="nav-header">
+      <h1 class="titulo">Proyecto Oracle MicroServicios</h1>
+      <ul class="ultablas">
+        <li><a href="http://localhost:8081/clientes"><i class="fas fa-users"></i> Clientes</a></li>
+        <li><a href="/direcciones"><i class="fas fa-map-marker-alt"></i> Direcciones</a></li>
+      </ul>
+    </nav>
+  </header>
 
-
-    <!-- tablas   -->
-    <main class="main-tablas">
-        <!-- nav para Crear - Read - Update - Delete  -->
-         <nav class="navcrud">
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-tablas">
+    <!-- BOTÓN Y MENÚ CRUD DESPLEGABLE -->
+    <div class="crud-toggle-container">
+      <button id="toggleMenu" class="toggle-button">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <nav class="navcrud" id="crudMenu">
         <ul class="ulcrud">
-            <li><a href="/agregarDireccion">Agregar</a></li>
-            <li><a href="/editarDireccion">Editar</a></li>
-            <li><a href="">Eliminar</a></li>
-            
+          <h1 class="titulo-crud"> MENU</h1>
+          <li><a href="/agregarDireccion"><i class="fas fa-plus-circle"></i> Agregar</a></li>
+          <li><a href="/editarDireccion"><i class="fas fa-edit"></i> Editar</a></li>
+          <li><a href="/eliminarDireccion"><i class="fas fa-trash-alt"></i> Eliminar</a></li>
         </ul>
-        </nav>
-        <section>
-            <h1>Direcciones</h1>
-            <div class="tabla-contenedor">
-                <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Direccion</th>
-                        <th>Ciudad</th>
-                        <th>Departamento</th>
-                        <th>Codigo Postal</th>
-                        <th>Tipo</th>
-                        <th>Cliente-id</th>
-                    </tr>
-                </thead>
-                <tbody id="direccion_table"></tbody>
-            </table>
-            </div>
-        </section>
-    </main>
-    <footer>
+      </nav>
+    </div>
 
-    </footer>
+    <!-- TABLA -->
+    <section>
+      <h1>Direcciones</h1>
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Dirección</th>
+              <th>Ciudad</th>
+              <th>Departamento</th>
+              <th>Código Postal</th>
+              <th>Tipo</th>
+              <th>Cliente-id</th>
+            </tr>
+          </thead>
+          <tbody id="direccion_table"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="/js/direcciones.js"></script>
+  <script>
+    const toggleBtn = document.getElementById("toggleMenu");
+    const crudMenu = document.getElementById("crudMenu");
+    const icon = toggleBtn.querySelector("i");
+
+    toggleBtn.addEventListener("click", () => {
+      crudMenu.classList.toggle("visible");
+      icon.classList.toggle("fa-chevron-right");
+      icon.classList.toggle("fa-chevron-left");
+    });
+  </script>
 </body>
 </html>

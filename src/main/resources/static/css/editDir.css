@@ -124,47 +124,95 @@ body {
     background-color: var(--color-primario);
 }
 
-/* Sección de formulario */
+/* SECTION + FORM */
 section {
     flex: 1;
     padding: 40px;
+    background: linear-gradient(to top, var(--color-gris-claro), #FBF9F8);
+    color: #000;
+    min-height: 100vh;
 }
-
 .form-cont {
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
 }
-
 .form-group {
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
+    align-items: center;
+    padding: 15px 0;
 }
-
 input, select {
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #354f52;
     background-color: #f0f0f0;
     color: #000;
+}
+input {
     width: 50%;
 }
-
-.fechas, select {
+select {
     width: 20%;
 }
-
+.fechas {
+    width: 20%;
+}
 .add {
-    width: 30%;
-    padding: 15px;
-    border-radius: 20px;
     background-color: var(--color-primario);
-    color: var(--color-blanco);
-    font-weight: bold;
+    color: white;
     border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 12px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+.add:hover {
+    background-color: #a8392a;
+}
+.filtro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.btns {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.8s linear infinite;
+    margin: 20px auto;
+}
+/* BARRA DE CARGA */
+.progress-bar-container {
+    width: 80%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px auto;
 }
 
-.add:hover {
-    background-color: #a3382a;
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background-color: var(--color-primario);
+    transition: width 0.5s ease-in-out;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

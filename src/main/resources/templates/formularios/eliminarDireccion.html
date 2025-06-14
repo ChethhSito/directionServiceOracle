@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="Juan" content="Java" />
+    <title>Eliminar Direcciones</title>
+    
+    <link rel="stylesheet" href="/css/editDir.css">
+    <link rel="stylesheet" href="/css/tablaDirecciones.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav class="nav-header">
+            <h1 class="titulo">Proyecto Oracle MicroServicios</h1>
+            <ul class="ultablas">
+                <li><a href="/clientes"><i class="fas fa-users"></i> Clientes</a></li>
+                <li><a href="http://localhost:8082/direcciones"><i class="fas fa-map-marker-alt"></i> Direcciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-tablas">
+        <!-- BOTÓN Y MENÚ CRUD DESPLEGABLE -->
+        <div class="crud-toggle-container">
+            <button id="toggleMenu" class="toggle-button">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <nav class="navcrud" id="crudMenu">
+                <ul class="ulcrud">
+                    <h1 class="titulo-crud">MENU</h1>
+                    <li><a href="/agregarDireccion"><i class="fas fa-plus-circle"></i> Agregar</a></li>
+                    <li><a href="/editarDireccion"><i class="fas fa-edit"></i> Editar</a></li>
+                    <li><a href="/eliminarDireccion"><i class="fas fa-trash-alt"></i> Eliminar</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- BUSCADOR -->
+        <section>
+            <h1>Eliminar Dirección</h1>
+            <div class="filtro">
+                <label for="direccionId">Ingrese el ID de la dirección</label>
+                <input type="text" id="direccionId" name="id" required>
+                <button class="add" type="button" id="btnBuscar">Buscar</button>
+            </div>
+
+            <div id="progress-bar" class="progress-bar-container" style="display: none;">
+                <div class="progress-bar-fill"></div>
+            </div>
+
+            <!-- TABLA DE LA DIRECCIÓN -->
+            <div class="tabla-contenedor" style="display: none;" id="tablaCont">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Dirección</th>
+                            <th>Ciudad</th>
+                            <th>Departamento</th>
+                            <th>Código Postal</th>
+                            <th>Cliente ID</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="direccion_table"></tbody>
+                </table>
+                <div class="btns">
+                    <button class="add" id="btnEliminar">Eliminar Dirección</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/js/deleteDire.js"></script>
+    <script>
+        const toggleBtn = document.getElementById("toggleMenu");
+        const crudMenu = document.getElementById("crudMenu");
+        const icon = toggleBtn.querySelector("i");
+
+        toggleBtn.addEventListener("click", () => {
+            crudMenu.classList.toggle("visible");
+            icon.classList.toggle("fa-chevron-right");
+            icon.classList.toggle("fa-chevron-left");
+        });
+    </script>
+</body>
+</html>
