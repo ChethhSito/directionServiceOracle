@@ -15,8 +15,8 @@
         <nav class="nav-header">
             <h1 class="titulo">Proyecto Oracle MicroServicios</h1>
             <ul class="ultablas">
-                <li><a href="/clientes"><i class="fas fa-users"></i> Clientes</a></li>
-                <li><a href="http://localhost:8082/direcciones"><i class="fas fa-map-marker-alt"></i> Direcciones</a></li>
+                <li><a href="http://localhost:8081/clientes"><i class="fas fa-users"></i> Clientes</a></li>
+                <li><a href="/direcciones"><i class="fas fa-map-marker-alt"></i> Direcciones</a></li>
             </ul>
         </nav>
     </header>
@@ -75,16 +75,7 @@
     </main>
 
     <script src="/js/deleteDire.js"></script>
-    <script>
-        const toggleBtn = document.getElementById("toggleMenu");
-        const crudMenu = document.getElementById("crudMenu");
-        const icon = toggleBtn.querySelector("i");
+        <script src="/js/acordeon.js"></script>
 
-        toggleBtn.addEventListener("click", () => {
-            crudMenu.classList.toggle("visible");
-            icon.classList.toggle("fa-chevron-right");
-            icon.classList.toggle("fa-chevron-left");
-        });
-    </script>
 </body>
 </html>
