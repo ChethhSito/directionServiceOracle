@@ -27,14 +27,25 @@ public class direccionService {
     // metodo para obtener todas las direcciones este sera llamado desde el controlador
     @Transactional(readOnly = true)
     public List<directions> getAllDirections() {
-        return directionRepository.obtenerTodasDirecciones();
+        try {
+            return directionRepository.obtenerTodasDirecciones();
+        } catch (Exception e) {
+            throw new RuntimeException("Error fetching all directions", e);
+        }
     }
     @Transactional(readOnly = true)
      public directions getDirectionById(Long id) {
-        return directionRepository.obtenerDireccionPorId(id);
+        try {
+            return directionRepository.obtenerDireccionPorId(id);
+           
+        } catch (Exception e) {
+            throw new RuntimeException("Error fetching direction with id: " + id, e);
+        }
+        
     }
     @Transactional(readOnly = true)
     public void saveDirection(directions direction) {
+        try{
         Long clienteId =direction.getClienteId();
         System.out.println("Cliente ID: " + clienteId);
         String url = "http://localhost:8082/api/directions/get/dirCli/" + clienteId;
@@ -46,6 +57,7 @@ public class direccionService {
         } catch (RestClientException e) {
             throw new RuntimeException("Cliente con ID " + clienteId + " no encontrado.");
         }
+        
         directionRepository.insertarDireccion(
             direction.getClienteId(),
             direction.getDireccion(),
@@ -54,6 +66,9 @@ public class direccionService {
             direction.getCodigoPostal(),
             direction.getTipo()
         );
+        } catch (RuntimeException e) {
+            throw new RuntimeException("Error saving direction", e);
+        }
     }
     @Transactional(readOnly = true)
     public void updateDirection(Long id, directions directionDa){

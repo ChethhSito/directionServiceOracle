@@ -12,7 +12,7 @@ fetch('api/directions')
             <td>${direccion.departamento}</td>
             <td>${direccion.codigoPostal}</td>
             <td>${direccion.tipo}</td>
-            <td>${direccion.clienteId.id}</td>`;
+            <td>${direccion.clienteId}</td>`;
             tbody.appendChild(fila);
     });}).catch(error => {
     console.error('Error fetching direccions:', error);

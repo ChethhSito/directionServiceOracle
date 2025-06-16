@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </tr>
             `;
         } catch (err) {
-            alert(err.message);
+            Swal.fire('Error al buscar', err.message, 'error');
             tablaCont.style.display = "none";
             tbody.innerHTML = "";
             direccionEncontrada = null;
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnEliminar.addEventListener("click", async () => {
         if (!direccionEncontrada) {
-            alert("Debe buscar una dirección primero.");
+            Swal.fire("Error", "Debe buscar una dirección primero.", "error");
             return;
         }
 

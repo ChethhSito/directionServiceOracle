@@ -21,14 +21,13 @@ document.getElementById('direccionForm').addEventListener('submit', function(eve
     }).then(response => {
         if (response.ok) {
             
-            alert("Direccion agregado correctamente");
+            Swal.fire("Direccion agregado correctamente", "", "success");
             // Opcional: limpiar formulario o redirigir
         } else {
-            alert("Error al agregar direccion");
+            Swal.fire('Error al agregar', 'No se pudo agregar la dirección', 'error');
         }
     }).catch(error => {
-    console.error("Error al agregar direccion:", error);
-    alert("Error del servidor: " + error.message);});
+    Swal.fire('Error al agregar', error.message, 'error');});
     this.reset(); // Limpia el formulario
 }
 );

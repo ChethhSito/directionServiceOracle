@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   btnRegistrarId.addEventListener('click', async function () {
     if (inputId.value.trim() === '') {
-      alert("Ingrese un ID de dirección válido");
+      Swal.fire('Error', 'Ingrese un ID de direccion válida', 'error');
       return;
     }
 
@@ -51,8 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .catch(error => {
         formulario.style.display = 'none';
-        console.error('Error al obtener la dirección:', error);
-        alert('Error al obtener la dirección: ' + error.message);
+        Swal.fire('No existe ese direccion con ese ID', error.message, 'error');
       });
   });
 
@@ -89,8 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       })
       .catch(error => {
-        console.error("Error al actualizar dirección:", error);
-        alert("Error del servidor: " + error.message);
+        Swal.fire('Error al actualizar', error.message, 'error');
       });
   });
 });

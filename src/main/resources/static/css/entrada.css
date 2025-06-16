@@ -1,0 +1,57 @@
+html{
+    font-size: 16px;
+    background-color: #212529;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    
+}
+@keyframes circle-in-bottom-left {
+  from {
+    clip-path: circle(0%);
+  }
+  to {
+    clip-path: circle(180% at bottom left);
+  }
+}
+
+[transition-style="in:circle:bottom-left"] {
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-bottom-left both;
+}
+@keyframes circle-out-top-right {
+  from {
+    clip-path: circle(125%);
+  }
+  to {
+    clip-path: circle(0% at top right);
+  }
+}
+
+[transition-style="out:circle:top-right"] {
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-out-top-right both;
+}
+
+.container {
+    background-color: cadetblue;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    inset: 0;
+    max-width: 100vw;
+    max-height: 100dvh;
+    margin: auto;
+   
+}
+h1{
+   
+    color:white;
+}
+button{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    position: bottom;
+    font-size: 50px;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
